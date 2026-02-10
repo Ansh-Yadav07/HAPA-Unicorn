@@ -1,0 +1,213 @@
+/* New Dashboard Styles */
+.search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-box i {
+    color: var(--text-secondary);
+    margin-right: 10px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+}
+
+.top-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.glass-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.investment-summary-card {
+    background: linear-gradient(135deg, rgba(15, 12, 41, 0.9), rgba(48, 43, 99, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.summary-main h2 {
+    font-size: 3rem; /* Bigger Value */
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.summary-pl {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.positive {
+    color: var(--accent-green);
+}
+
+.section-block {
+    margin-bottom: 2rem;
+}
+
+.block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.block-header h3 {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.view-all {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Horizontal Scroll Containers */
+.horizontal-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.index-card {
+    min-width: 200px; /* Wider */
+    padding: 1.5rem;
+    flex-shrink: 0;
+}
+
+.index-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.index-value {
+    font-size: 1.5rem; /* Bigger */
+    font-weight: 700;
+    margin: 0.8rem 0;
+}
+
+.index-change {
+    font-size: 1rem;
+}
+
+/* Most Bought Cards */
+.stock-card {
+    min-width: 140px;
+    padding: 1rem;
+    flex-shrink: 0;
+}
+
+.stock-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stock-name {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.stock-price {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Wider Gaps */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    position: relative;
+    padding: 1rem;
+    border-radius: 16px;
+    transition: background 0.3s;
+}
+
+.product-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-box {
+    width: 70px; /* Bigger Icons */
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem; /* Bigger Icon Font */
+    margin-bottom: 0.5rem;
+}
+
+.p-blue { background: rgba(0, 243, 255, 0.15); color: var(--neon-blue); }
+.p-purple { background: rgba(136, 146, 176, 0.2); color: #ccd6f6; }
+.p-red { background: rgba(255, 82, 82, 0.15); color: var(--accent-red); }
+.p-gray { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+.tag {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.tag.blue { background: var(--neon-blue); color: #0a192f; }
+.tag.purple { background: var(--text-secondary); color: #0a192f; }
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

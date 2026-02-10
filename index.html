@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPAning - Finance AI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for Gen Z vibes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="glass-background"></div>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="HAPAning Logo" class="logo-img"> HAPAning
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" data-target="dashboard">Home</button>
+            <button class="nav-btn" data-target="portfolio">Portfolio </button>
+            <button class="nav-btn" data-target="heatmap">Heatmap</button>
+            <button class="nav-btn" data-target="allocation">AI Allocation</button>
+            <button class="nav-btn" data-target="twap">TWAP Sim</button>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        
+        <!-- NEW Home Dashboard Section (Image Replica) -->
+        <section id="dashboard" class="page-section active">
+            <!-- Search Bar -->
+            <div class="search-bar-container">
+                <div class="glass-input search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search shares...">
+                </div>
+                <div class="top-actions">
+                    <button class="glass-btn">Funds</button>
+                    <button class="glass-btn icon-only">🎁</button>
+                </div>
+            </div>
+
+            <!-- Investment Summary -->
+            <div class="glass-card investment-summary-card">
+                <div class="summary-header">
+                    <span>Investments summary 👁️</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="summary-body">
+                    <div class="summary-main">
+                        <span class="label">Equity</span>
+                        <h2 class="total-value">₹1.84 Crores</h2>
+                    </div>
+                    <div class="summary-pl positive">
+                        Today's P/L +1.03 lakhs (+0.56%)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Indices -->
+            <div class="section-block">
+                <div class="block-header">
+                    <h3>Market indices</h3>
+                    <a href="#" class="view-all">View all ></a>
+                </div>
+                <div class="horizontal-scroll" id="indices-container">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- Most Bought -->
+            <div class="section-block">
+                <div class="block-header">
+                    <h3>Most bought on HAPAning</h3>
+                </div>
+                <div class="horizontal-scroll" id="most-bought-container">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- Investment Products -->
+            <div class="section-block">
+                <div class="block-header">
+                    <h3>Investment products</h3>
+                </div>
+                <div class="products-grid">
+                    <div class="product-item">
+                        <div class="icon-box p-blue"><i class="fas fa-money-bill-wave"></i></div>
+                        <span>Mutual Funds</span>
+                        <div class="tag blue">12 Live NFOs</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="icon-box p-purple"><i class="fas fa-bullhorn"></i></div>
+                        <span>IPO</span>
+                        <div class="tag purple">5 Live</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="icon-box p-red"><i class="fas fa-cubes"></i></div>
+                        <span>Stock Baskets</span>
+                    </div>
+                    <div class="product-item">
+                        <div class="icon-box p-gray"><i class="fas fa-piggy-bank"></i></div>
+                        <span>Stocks SIPs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="page-section">
+             <header class="section-header">
+                <h1>My Portfolio</h1>
+                <p>Detailed breakdown of your holdings</p>
+            </header>
+            <div class="glass-card">
+                <table class="allocation-table" id="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Stock</th>
+                            <th>Qty</th>
+                            <th>Avg. Price</th>
+                            <th>Current</th>
+                            <th>P/L</th>
+                        </tr>
+                    </thead>
+                    <tbody id="portfolio-body">
+                        <!-- Injected JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- OLD Dashboard moved to Heatmap Section -->
+        <section id="heatmap" class="page-section">
+            <header class="section-header">
+                <h1>Market Overview</h1>
+                <p>Live sector performance heat map <span class="refresh-indicator"> 🔴 Live</span></p>
+            </header>
+            
+            <div class="dashboard-grid">
+                <div class="glass-card heatmap-card">
+                    <h3>Sector Heat Map</h3>
+                    <div id="sector-heatmap" class="heatmap-grid">
+                        <!-- Heatmap tiles will be injected here -->
+                    </div>
+                </div>
+                
+                <div class="side-panel">
+                    <div class="glass-card mood-card">
+                        <h3>Market Mood</h3>
+                        <div class="mood-meter">
+                            <div class="mood-emoji">😐</div>
+                            <div class="mood-text">Neutral</div>
+                            <div class="mood-bar-container">
+                                <div class="mood-bar-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card top-mover-card">
+                        <h3> Top Mover</h3>
+                        <div id="top-mover-content">
+                            <!-- Top mover data -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Allocation Section -->
+        <section id="allocation" class="page-section">
+            <header class="section-header">
+                <h1>AI Fund Allocator </h1>
+                <p>Let AI optimize your portfolio based on market heat</p>
+            </header>
+
+            <div class="allocation-grid">
+                <div class="glass-card input-card">
+                    <h3>Input Capital</h3>
+                    <div class="input-group">
+                        <label>Total Investment (₹)</label>
+                        <input type="number" id="fund-input" placeholder="e.g. 50000" min="1000">
+                    </div>
+                    <button id="generate-allocation-btn" class="action-btn glow-effect">Generate Allocation</button>
+                </div>
+
+                <div class="glass-card results-card" id="allocation-results" style="display: none;">
+                    <div class="chart-container">
+                        <canvas id="allocation-chart"></canvas>
+                    </div>
+                    <div class="allocation-details">
+                        <h4>AI Logic</h4>
+                        <p id="ai-logic-text">Analyzing market trends...</p>
+                        <div id="allocation-table-container">
+                            <!-- Table injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TWAP Simulation Section -->
+        <section id="twap" class="page-section">
+            <header class="section-header">
+                <h1>TWAP Simulator</h1>
+                <p>Time-Weighted Average Price execution strategy</p>
+            </header>
+
+            <div class="twap-container">
+                <div class="glass-card twap-controls">
+                    <h3>Configure Execution</h3>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Select Sector</label>
+                            <select id="twap-sector-select">
+                                <!-- Options populated by JS -->
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" id="twap-amount" placeholder="100000">
+                        </div>
+                        <div class="input-group">
+                            <label>Duration (Hours)</label>
+                            <input type="range" id="twap-duration" min="1" max="12" step="1" value="4">
+                            <span id="duration-display">4 Hours</span>
+                        </div>
+                    </div>
+                    <button id="run-twap-btn" class="action-btn">Simulate Execution</button>
+                    
+                    <div class="education-tip">
+                        <i class="fas fa-info-circle"></i>
+                        <span><strong>What is TWAP?</strong> It splits your big order into small chunks over time to get a better average price and not spike the market! 📉</span>
+                    </div>
+                </div>
+
+                <div class="glass-card twap-results" id="twap-results" style="display: none;">
+                    <div class="metrics-row">
+                        <div class="metric-box">
+                            <span class="label">Avg Entry Price</span>
+                            <span class="value" id="twap-avg-price">₹0.00</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="label">Est. Profit</span>
+                            <span class="value success" id="twap-profit">+0%</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="label">Volatility Savings</span>
+                            <span class="value" id="twap-savings">₹0</span>
+                        </div>
+                    </div>
+                    <div class="timeline-chart-container">
+                        <canvas id="twap-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section">
+            <div class="glass-card about-card">
+                <h2>About <span class="brand-highlight">HAPAning</span></h2>
+                <p class="tagline">“Making Finance Happen. Smart. Simple. AI Powered.”</p>
+                <div class="team-info">
+                   <p>Built for the modern investor who wants clear, data-driven insights without the clutter.</p>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Sector Heatmaps</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Allocation</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-stopwatch"></i>
+                        <span>TWAP Sim</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/heatmap.js"></script>
+    <script src="js/allocation.js"></script>
+    <script src="js/twap.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
