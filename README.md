@@ -199,6 +199,3 @@ This project is licensed under the MIT License.
 ---
 
 Built with ❤️ using HTML, CSS, JavaScript, and Chart.js.
-
-If you enjoyed this project, consider giving it a ⭐ on GitHub!
-````0
